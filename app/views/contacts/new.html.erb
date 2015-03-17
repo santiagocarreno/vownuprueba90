@@ -1,0 +1,89 @@
+<div align="center">
+
+<%= render "/shared/navbar" %> 
+
+<div id="formulario_fundacion" class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<%= simple_form_for @contact do |f| %>
+			<h2>Registro de Fundación </h2>
+
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6">
+					<div class="form-group">
+						<%= f.input :name, class: 'form-control input-lg', id: "first_name", placeholder: "Nombres",  required: true %>
+                        
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6">
+					<div class="form-group">
+						<%= f.input :last_name, class: 'form-control input-lg', id: "last_name", placeholder: "Apellidos",  required: true %>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= f.input :foundation_name, class: 'form-control input-lg', id: "foundation_name", placeholder: "Nombre de la Fundación",  required: true, tabindex:"3" %>
+
+				
+			</div>
+			<div class="form-group">
+				
+				<%= f.input :email, id: "email", class: 'form-control input-lg', placeholder: "Email",  required: true, tabindex:"4" %>
+			</div>
+			<div class="form-group">
+
+				<%= f.input :phone, id: "phone", class: 'form-control input-lg', placeholder: "Teléfono de Contacto",  required: true, tabindex:"4" %>
+
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-2 col-sm-2 col-md-2">
+					<span class="button-checkbox">
+						<span   data-color="info" tabindex="7">Acepto</span>
+                        <input type="checkbox" name="t_and_c" id="t_and_c"  value="1">
+					</span>
+				</div>
+				<div class="col-xs-10 col-sm-10 col-md-10">
+					 Al hacer click en <strong class="label label-primary">Registrarme</strong>, ud acepta los <a href="#" data-toggle="modal" data-target="#t_and_c_m">Términos y Condiciones de Uso</a> de este sitio y nuestra política de privacidad.
+				</div>
+			</div>
+			
+
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<%= f.button :submit, 'Registrarme', :class=> "btn btn-primary btn-block btn-lg",tabindex: "7"  %>
+				</div>
+ <% end %>
+
+
+		</form>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+	
+ 
+</div>

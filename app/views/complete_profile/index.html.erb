@@ -1,0 +1,66 @@
+<div class="navbar-fixed-top">
+
+<%= render "/shared/navbar" %> 
+
+</div>
+
+
+<div class="container">
+	<div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"><img src=<%="#{@user.photo_url}"%> style="width:100%"></div>
+            <div class="form-box">
+            	<%= form_for(@user, url: {action: :save}, method: :patch) do |f|%>
+            	<%= f.label "Correo electrónico"%>
+            	<% corr = ""%>
+            	<% corr = @user.email if @user.email != "#{@user.username}@email.com"%>
+                 
+            	<%= f.text_field :email, :value => corr, placeholder: "vownu@email.com"%>
+            	<%= f.label "Nombre Completo"%>
+            	<%= f.text_field :name, :value => "#{@user.name}", placeholder: "Pepito Paez"%>
+
+
+            	<%= f.submit "Actualizar Datos", class:"btn login", id:"actualizar_datos" %>
+            	<% end %>
+                   
+            </div>
+        </div>
+        
+</div>
+
+
+
+
+<div class="container">
+      <h1 class="text-center">Selecciona las fundaciones que deseas apoyar</h1>
+</div>
+
+<div class="container">
+
+      <div class="well well-sm text-center">
+
+            <h3>Checkbox</h3>
+            
+            <div class="btn-group" data-toggle="buttons">
+                  <ul>
+
+                        <% @foundations.find_each do |foundation| %>
+                        
+
+                        <li class="check_para_fundaciones">
+                              <label class="btn btn-primary">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                              </label>
+                              <%=  foundation.name %>
+                        </li>
+                        <% end %>
+                                      
+                  </ul>
+            </div>
+
+      </div>
+
+</div>
+
+

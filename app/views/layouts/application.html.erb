@@ -1,0 +1,74 @@
+<!--Vista de la aplicacion, los cambios hechos aquí apareceran siempre a menos que se haga una excepcion-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VowNu</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Google Fonts API Tangerine y Montserrat -->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+</head>
+<body data-spy="scroll">
+    
+    <!---//Facebook button code-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- ******HEADER****** --> 
+    <header id="header" class="header">  
+        <div class="container">            
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <span class="logo-title">Inicio</span>
+                </a>
+            </h1><!--//logo-->              
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav" id="palabrassuperiores">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo"><%= link_to "#promo", new_contact_path %></a></li>
+                        <li class="nav-item"><a class="scrollto"><%= link_to "Fundación", new_contact_path %></a></li>
+                        <li class="nav-item"><a class="scrollto"><%= link_to "Donantes", new_user_session_path %></a></li>
+                        <li class="nav-item"><a class="scrollto"><%= link_to "Nosotros", "#Nosotros" %></a></li>
+                        <li class="nav-item"><a class="scrollto"><%= link_to "Regístrate", "#registrate" %></a></li><!-- aca va el modal-->         
+                        <li class="nav-item"><a class="scrollto"><%= link_to "Ingresa", new_user_session_path %></a></li>                       
+                        <!--<li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>-->
+
+
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+<%= yield %>
+
+
+ <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+            <small class="copyright"><i class="fa fa-heart">Vow 2015</i><a href="http://themes.3rdwavemedia.com" target="_blank"></a> Derechos Reservados</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+</body>
+</html>
+
